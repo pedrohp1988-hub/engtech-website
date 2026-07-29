@@ -1,0 +1,84 @@
+"use client";
+
+import Link from "next/link";
+import { Menu, Phone, X } from "lucide-react";
+import { useState } from "react";
+import { navigation, siteConfig } from "@/lib/site-config";
+
+export function Header() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-white backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          aria-label="EngTech HVAC home"
+        >
+          <span className="grid size-10 place-items-center rounded-sm bg-amber font-black text-ink">
+            ET
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-extrabold tracking-wide">
+              ENGTECH
+            </span>
+            <span className="block text-[10px] font-medium tracking-[0.2em] text-slate-300">
+              HVAC SOLUTIONS
+            </span>
+          </span>
+        </Link>
+        <nav
+          className="hidden items-center gap-8 lg:flex"
+          aria-label="Primary navigation"
+        >
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-semibold text-slate-200 transition hover:text-amber"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <a
+          href={`tel:${siteConfig.phone}`}
+          className="hidden items-center gap-2 text-sm font-bold text-amber sm:flex"
+        >
+          <Phone className="size-4" /> {siteConfig.phoneDisplay}
+        </a>
+        <button
+          type="button"
+          className="grid size-11 place-items-center lg:hidden"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation"
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+      {open && (
+        <nav
+          id="mobile-menu"
+          className="border-t border-white/10 px-5 py-5 lg:hidden"
+          aria-label="Mobile navigation"
+        >
+          <div className="mx-auto grid max-w-7xl gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="rounded px-3 py-3 text-base font-semibold hover:bg-white/5"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
+    </header>
+  );
+}
