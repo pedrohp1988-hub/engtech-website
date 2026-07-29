@@ -4,16 +4,20 @@ import { cn } from "@/lib/utils";
 export function EngTechLogo({
   className,
   compact = false,
+  white = false,
 }: {
   className?: string;
   compact?: boolean;
+  white?: boolean;
 }) {
   return (
     <Image
       src={
         compact
           ? "/brand/engtech-icon.svg"
-          : "/brand/engtech-logo-horizontal.svg"
+          : white
+            ? "/brand/engtech-logo-white.svg"
+            : "/brand/engtech-logo-horizontal.svg"
       }
       alt="EngTech HVAC Solutions USA"
       width={compact ? 44 : 224}
