@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
-import { siteConfig } from "@/lib/site-config";
+import { serviceAreas, serviceNames, siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,17 +19,17 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "EngTech HVAC Solutions | Commercial HVAC Nationwide",
+    default: "EngTech HVAC Solutions USA | South Florida HVAC Services",
     template: "%s | EngTech HVAC Solutions",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    "commercial HVAC",
-    "HVAC maintenance",
-    "building automation",
-    "HVAC repair",
-    "nationwide HVAC",
+    "HVAC services in South Florida",
+    "AC repair in South Florida",
+    "residential HVAC",
+    "light-commercial HVAC",
+    "mini-split service",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: siteConfig.name,
-    title: "EngTech HVAC Solutions",
+    title: "EngTech HVAC Solutions USA",
     description: siteConfig.description,
     images: [
       {
@@ -80,7 +80,8 @@ export default function RootLayout({
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    areaServed: { "@type": "Country", name: "United States" },
+    areaServed: serviceAreas.map((city) => ({ "@type": "City", name: city })),
+    serviceType: [...serviceNames],
   };
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>

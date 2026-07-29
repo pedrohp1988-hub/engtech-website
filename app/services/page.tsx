@@ -5,9 +5,9 @@ import { PageHero } from "@/components/sections/page-hero";
 import { services } from "@/content/services";
 
 export const metadata: Metadata = {
-  title: "Commercial HVAC Services",
+  title: "HVAC Services in South Florida",
   description:
-    "Commercial HVAC installation, maintenance, controls, refrigeration, optimization, and emergency repair across the USA.",
+    "AC repair, installation, replacement, maintenance, mini-split, controls, indoor air quality, ductwork, and light-commercial HVAC service in South Florida.",
   alternates: { canonical: "/services" },
 };
 
@@ -16,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our services"
-        title="Full-lifecycle HVAC capability, under one roof."
-        description="Flexible enough for a single facility. Structured enough for a national portfolio. Always engineered around your operation."
+        title="HVAC services for South Florida homes and businesses."
+        description="Clear, practical help for AC repair, replacement, installation, maintenance, and indoor comfort."
       />
       <section className="px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
