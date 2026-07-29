@@ -18,7 +18,8 @@ export function Header() {
           className="flex items-center gap-3"
           aria-label="EngTech HVAC home"
         >
-          <EngTechLogo />
+          <EngTechLogo className="hidden sm:block" />
+          <EngTechLogo compact className="sm:hidden" />
         </Link>
         <nav
           className="hidden items-center gap-8 lg:flex"
