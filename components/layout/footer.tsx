@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { EmailLink, PhoneLink } from "@/components/ui/contact-link";
+import { EngTechLogo } from "@/components/brand/engtech-logo";
 import { navigation, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -8,9 +9,7 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.5fr_1fr_1.2fr]">
         <div>
-          <p className="text-xl font-extrabold tracking-wide">
-            ENGTECH <span className="text-amber">HVAC</span>
-          </p>
+          <EngTechLogo white className="h-12 w-auto" />
           <p className="mt-5 max-w-md leading-7 text-slate-300">
             {siteConfig.description}
           </p>

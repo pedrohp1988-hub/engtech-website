@@ -5,6 +5,8 @@ import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { navigation, siteConfig } from "@/lib/site-config";
 import { PhoneLink } from "@/components/ui/contact-link";
+import { EngTechLogo } from "@/components/brand/engtech-logo";
+import { servicePages } from "@/content/service-pages";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -17,17 +19,8 @@ export function Header() {
           className="flex items-center gap-3"
           aria-label="EngTech HVAC home"
         >
-          <span className="grid size-10 place-items-center rounded-sm bg-amber font-black text-ink">
-            ET
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-extrabold tracking-wide">
-              ENGTECH
-            </span>
-            <span className="block text-[10px] font-medium tracking-[0.2em] text-slate-300">
-              HVAC SOLUTIONS
-            </span>
-          </span>
+          <EngTechLogo className="hidden sm:block" />
+          <EngTechLogo compact className="sm:hidden" />
         </Link>
         <nav
           className="hidden items-center gap-8 lg:flex"
@@ -61,6 +54,17 @@ export function Header() {
           {open ? <X /> : <Menu />}
         </button>
       </div>
+      <div className="hidden border-t border-white/10 bg-navy/60 sm:block">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-center gap-6 px-5 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-slate-300 sm:justify-between sm:px-8">
+          <span>Serving South Florida</span>
+          <span className="hidden md:inline">
+            Residential &amp; light-commercial HVAC
+          </span>
+          <span className="hidden lg:inline">
+            Repair · Installation · Replacement
+          </span>
+        </div>
+      </div>
       {open && (
         <nav
           id="mobile-menu"
@@ -78,6 +82,23 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="border-t border-white/10 pt-3">
+              <p className="px-3 text-xs font-bold uppercase tracking-[0.18em] text-amber">
+                HVAC services
+              </p>
+              <div className="mt-1 grid gap-1 sm:grid-cols-2">
+                {servicePages.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/${service.slug}`}
+                    onClick={() => setOpen(false)}
+                    className="rounded px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-white/5"
+                  >
+                    {service.eyebrow}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </nav>
       )}
