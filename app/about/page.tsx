@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the engineering-led team and operating principles behind EngTech HVAC Solutions.",
+    "Learn about EngTech HVAC Solutions USA and our local approach to residential and light-commercial HVAC service in South Florida.",
   alternates: { canonical: "/about" },
 };
 
@@ -19,18 +19,18 @@ const values = [
   },
   {
     icon: Eye,
-    title: "Radical clarity",
-    text: "Clients get direct answers, visible progress, and documentation they can trust.",
+    title: "Clear communication",
+    text: "You get direct answers, visible next steps, and practical recommendations.",
   },
   {
     icon: Award,
-    title: "Technical rigor",
-    text: "We solve root causes with disciplined engineering—not temporary workarounds.",
+    title: "Technical care",
+    text: "We look for the underlying issue and explain the options before work begins.",
   },
   {
     icon: Handshake,
     title: "Ownership",
-    text: "We stay accountable from the first call through verified completion.",
+    text: "We stay accountable from the first call through the completed service visit.",
   },
 ];
 
@@ -39,23 +39,23 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About EngTech"
-        title="Engineering judgment. Field-tested execution."
-        description="EngTech HVAC Solutions was built to close the gap between sophisticated facility needs and dependable service delivery."
+        title="A local HVAC partner for South Florida."
+        description="EngTech HVAC Solutions USA helps homeowners and local businesses make informed HVAC decisions and keep their spaces comfortable."
       />
       <section className="px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2">
           <SectionHeading
             eyebrow="Our purpose"
-            title="Make complex HVAC work feel controlled."
-            description="Our teams coordinate technical, operational, and commercial priorities into one clear path forward. Whether managing a planned upgrade or an urgent outage, we bring structure to the work and confidence to every decision."
+            title="Make HVAC decisions feel clear."
+            description="We explain the problem, outline practical options, and help you choose the right next step for your property."
           />
           <div className="border-l-4 border-amber bg-frost p-8 sm:p-10">
             <p className="text-2xl font-medium leading-10 text-navy">
-              “The best service partner is the one who sees the whole system,
-              communicates clearly, and owns the outcome.”
+              Good HVAC service starts with listening, careful work, and clear
+              next steps.
             </p>
             <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-steel">
-              The EngTech operating principle
+              The EngTech approach
             </p>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="What guides us"
-            title="Standards that scale with the challenge."
+            title="Standards that matter on every visit."
             light
           />
           <div className="mt-12 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">

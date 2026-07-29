@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { navigation, siteConfig } from "@/lib/site-config";
+import { PhoneLink } from "@/components/ui/contact-link";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -42,12 +43,13 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a
-          href={`tel:${siteConfig.phone}`}
+        <PhoneLink
+          phone={siteConfig.phone}
+          location="header"
           className="hidden items-center gap-2 text-sm font-bold text-amber sm:flex"
         >
           <Phone className="size-4" /> {siteConfig.phoneDisplay}
-        </a>
+        </PhoneLink>
         <button
           type="button"
           className="grid size-11 place-items-center lg:hidden"
