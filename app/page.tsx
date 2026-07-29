@@ -15,6 +15,15 @@ import { PhoneLink } from "@/components/ui/contact-link";
 import { services } from "@/content/services";
 import { serviceAreas, siteConfig } from "@/lib/site-config";
 
+const landingSlugs: Record<string, string> = {
+  "ac-repair": "ac-repair",
+  "ac-installation": "ac-installation",
+  "ac-replacement": "ac-replacement",
+  "preventive-maintenance": "preventive-maintenance",
+  "mini-splits": "mini-split-installation",
+  "commercial-hvac": "commercial-hvac",
+};
+
 export const metadata: Metadata = {
   title: "South Florida HVAC Services",
   description:
@@ -237,7 +246,11 @@ export default function HomePage() {
             {services.map(({ slug, title, summary, icon: Icon }) => (
               <Link
                 key={slug}
-                href={`/services#${slug}`}
+                href={
+                  landingSlugs[slug]
+                    ? `/${landingSlugs[slug]}`
+                    : `/services#${slug}`
+                }
                 className="group bg-white p-8 transition duration-300 hover:-translate-y-1 hover:bg-frost hover:shadow-lift"
               >
                 <span className="grid size-14 place-items-center rounded-2xl bg-navy/5 transition group-hover:bg-amber/15">
@@ -251,7 +264,7 @@ export default function HomePage() {
                 <h2 className="mt-8 text-xl font-semibold">{title}</h2>
                 <p className="mt-3 leading-7 text-steel">{summary}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-navy">
-                  Learn more{" "}
+                  Explore {title}{" "}
                   <ArrowUpRight className="size-4 transition group-hover:translate-x-1" />
                 </span>
               </Link>

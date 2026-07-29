@@ -6,6 +6,7 @@ import { useState } from "react";
 import { navigation, siteConfig } from "@/lib/site-config";
 import { PhoneLink } from "@/components/ui/contact-link";
 import { EngTechLogo } from "@/components/brand/engtech-logo";
+import { servicePages } from "@/content/service-pages";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -88,6 +89,23 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="border-t border-white/10 pt-3">
+              <p className="px-3 text-xs font-bold uppercase tracking-[0.18em] text-amber">
+                HVAC services
+              </p>
+              <div className="mt-1 grid gap-1 sm:grid-cols-2">
+                {servicePages.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/${service.slug}`}
+                    onClick={() => setOpen(false)}
+                    className="rounded px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-white/5"
+                  >
+                    {service.eyebrow}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </nav>
       )}
