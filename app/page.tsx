@@ -5,8 +5,8 @@ import {
   ArrowUpRight,
   CheckCircle2,
   MapPin,
+  Phone,
   Snowflake,
-  Wind,
 } from "lucide-react";
 import { CTA } from "@/components/sections/cta";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -115,31 +115,34 @@ export default function HomePage() {
                 location="hero"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
               >
-                Call {siteConfig.phoneDisplay}
+                <Phone className="size-4" />
+                <span>Call now</span>
+                <span className="text-slate-300">
+                  {siteConfig.phoneDisplay}
+                </span>
               </PhoneLink>
             </div>
           </div>
           <div className="relative hidden min-h-[360px] lg:block">
             <div className="absolute inset-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 via-navy/80 to-amber/10 p-8 shadow-2xl shadow-black/20">
               <div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
-                <span>Comfort system</span>
+                <span>EngTech HVAC service</span>
                 <Snowflake className="size-5 text-amber" />
               </div>
-              <div className="mt-16 flex items-center gap-5">
-                <div className="grid size-24 place-items-center rounded-full border border-amber/50 bg-amber/10">
-                  <Wind className="size-12 text-amber" />
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold">Cool air.</p>
-                  <p className="mt-1 text-slate-300">Clear next steps.</p>
-                </div>
+              <div className="mt-14 space-y-4">
+                <p className="text-3xl font-semibold">
+                  Residential &amp; light-commercial
+                </p>
+                <p className="text-lg text-slate-300">
+                  Repair, installation &amp; replacement
+                </p>
+                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-amber">
+                  <MapPin className="size-4" /> Serving South Florida
+                </p>
               </div>
-              <div className="mt-16 h-1 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-2/3 rounded-full bg-amber" />
-              </div>
-              <div className="mt-3 flex justify-between text-xs text-slate-400">
-                <span>Residential</span>
-                <span>Light-commercial</span>
+              <div className="mt-10 flex items-center gap-3 border-t border-white/15 pt-5 text-sm font-bold text-white">
+                <Phone className="size-4 text-amber" />
+                <span>Request service or call today</span>
               </div>
             </div>
           </div>
@@ -189,8 +192,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Equipment familiarity"
-            title="We service all major HVAC brands."
-            description="Brand names are shown for familiarity only. Service options depend on the specific system and property."
+            title="We Service All Major HVAC Brands"
+            description="Brand names are shown for familiarity only. EngTech services multiple HVAC equipment brands and does not imply manufacturer affiliation."
           />
           <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
             {brands.map((brand) => (
@@ -202,6 +205,9 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-5 text-xs leading-6 text-steel">
+            Brand names are trademarks of their respective owners.
+          </p>
         </div>
       </section>
 
@@ -237,6 +243,11 @@ export default function HomePage() {
                 <span className="grid size-14 place-items-center rounded-2xl bg-navy/5 transition group-hover:bg-amber/15">
                   <Icon className="size-8 text-amber" />
                 </span>
+                {slug === "ac-repair" && (
+                  <span className="mt-5 inline-flex rounded-full bg-amber/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-navy">
+                    Popular service
+                  </span>
+                )}
                 <h2 className="mt-8 text-xl font-semibold">{title}</h2>
                 <p className="mt-3 leading-7 text-steel">{summary}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-navy">
@@ -256,11 +267,11 @@ export default function HomePage() {
             title="Local service across South Florida."
             description={`EngTech serves ${serviceAreas.join(", ")}, and nearby South Florida communities.`}
           />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div className="relative grid grid-cols-2 gap-3 rounded-3xl border border-navy/10 bg-white/60 p-4 shadow-sm sm:grid-cols-3">
             {serviceAreas.map((city) => (
               <div
                 key={city}
-                className="flex items-center gap-2 bg-white px-4 py-4 text-sm font-semibold"
+                className="flex items-center gap-2 rounded-xl bg-white px-4 py-4 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-lift"
               >
                 <MapPin className="size-4 shrink-0 text-amber" />
                 {city}
