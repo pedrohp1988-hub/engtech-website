@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -81,21 +82,31 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
+        <Image
+          src="/hero-hvac-technician.png"
+          alt="HVAC technician inspecting an outdoor air-conditioning system"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/95 to-ink/40" />
         <div className="grid-pattern absolute inset-0 opacity-40" />
         <div className="absolute -right-36 top-0 h-full w-2/3 -skew-x-12 bg-gradient-to-br from-navy/20 via-navy to-amber/10" />
         <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.1fr_.9fr]">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.26em] text-amber">
+            <p className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-ink/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-amber backdrop-blur-sm">
+              <Snowflake className="size-4" />
               Residential & light-commercial HVAC • South Florida
             </p>
             <h1 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-              South Florida HVAC services for{" "}
-              <span className="text-amber">cooler, clearer comfort.</span>
+              We repair, install, and replace{" "}
+              <span className="text-amber">air conditioning systems.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              AC repair, installation, replacement, maintenance, mini-splits,
-              controls, indoor air quality, and ductwork for local homes and
-              businesses.
+              Practical HVAC service for South Florida homes and
+              light-commercial properties — from a no-cooling call to a planned
+              system upgrade.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Request service</ButtonLink>
@@ -160,11 +171,11 @@ export default function HomePage() {
             title="A better service experience starts with clarity."
             description="You deserve to understand what is happening with your HVAC system and what your options are. That is the standard we bring to every request."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {trustPoints.map((point) => (
               <article
                 key={point.title}
-                className="border-t-2 border-amber pt-5"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber/50 hover:shadow-lift"
               >
                 <h2 className="text-lg font-semibold">{point.title}</h2>
                 <p className="mt-2 leading-7 text-steel">{point.text}</p>
@@ -185,7 +196,7 @@ export default function HomePage() {
             {brands.map((brand) => (
               <div
                 key={brand}
-                className="grid min-h-20 place-items-center border border-slate-200 bg-white px-3 text-center text-lg font-bold tracking-tight text-navy transition hover:-translate-y-1 hover:border-amber hover:shadow-lift"
+                className="group grid min-h-24 place-items-center rounded-xl border border-slate-200 bg-white px-3 text-center text-lg font-bold tracking-tight text-navy shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber hover:shadow-lift"
               >
                 {brand}
               </div>
@@ -213,7 +224,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Our services"
-            title="HVAC support for the work your property needs."
+            title="Repair, installation, and replacement — clearly explained."
             description="From a no-cooling call to a planned replacement, EngTech brings clear recommendations and careful service to every job."
           />
           <div className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-3">
@@ -221,9 +232,11 @@ export default function HomePage() {
               <Link
                 key={slug}
                 href={`/services#${slug}`}
-                className="group bg-white p-7 transition hover:bg-frost"
+                className="group bg-white p-8 transition duration-300 hover:-translate-y-1 hover:bg-frost hover:shadow-lift"
               >
-                <Icon className="size-9 text-amber" />
+                <span className="grid size-14 place-items-center rounded-2xl bg-navy/5 transition group-hover:bg-amber/15">
+                  <Icon className="size-8 text-amber" />
+                </span>
                 <h2 className="mt-8 text-xl font-semibold">{title}</h2>
                 <p className="mt-3 leading-7 text-steel">{summary}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-navy">
