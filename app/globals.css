@@ -25,6 +25,11 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+@media (max-width: 359px) {
+  .mobile-logo-subtitle {
+    display: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
