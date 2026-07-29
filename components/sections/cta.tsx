@@ -6,10 +6,10 @@ export function CTA() {
       <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 py-12 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-navy">
-            Ready when your facility needs us
+            Ready to talk through your HVAC needs?
           </p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-ink">
-            Put an experienced HVAC team on your next challenge.
+            Tell us what is happening and we will help clarify the next step.
           </h2>
         </div>
         <ButtonLink
