@@ -55,7 +55,7 @@ export function Header() {
         </button>
       </div>
       <div className="hidden border-t border-white/10 bg-navy/60 sm:block">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-300 sm:px-8">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-center gap-6 px-5 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-slate-300 sm:justify-between sm:px-8">
           <span>Serving South Florida</span>
           <span className="hidden md:inline">
             Residential &amp; light-commercial HVAC
@@ -63,13 +63,6 @@ export function Header() {
           <span className="hidden lg:inline">
             Repair · Installation · Replacement
           </span>
-          <PhoneLink
-            phone={siteConfig.phone}
-            location="header_trust_bar"
-            className="text-amber"
-          >
-            {siteConfig.phoneDisplay}
-          </PhoneLink>
         </div>
       </div>
       {open && (

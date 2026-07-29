@@ -125,9 +125,11 @@ export default function HomePage() {
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
               >
                 <Phone className="size-4" />
-                <span>Call now</span>
-                <span className="text-slate-300">
-                  {siteConfig.phoneDisplay}
+                <span className="flex flex-col items-center leading-tight">
+                  <span>Call Now</span>
+                  <span className="mt-1 whitespace-nowrap text-xs font-semibold normal-case tracking-normal text-slate-300">
+                    {siteConfig.phoneDisplay}
+                  </span>
                 </span>
               </PhoneLink>
             </div>
