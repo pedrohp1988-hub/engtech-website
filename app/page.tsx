@@ -97,7 +97,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="contrast-105 object-cover object-center opacity-85 brightness-110"
+          className="contrast-105 brightness-115 object-cover object-[62%_center] opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent" />
         <div className="grid-pattern absolute inset-0 opacity-40" />
@@ -135,12 +135,12 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative hidden min-h-[360px] lg:block">
-            <div className="absolute inset-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 via-navy/80 to-amber/10 p-8 shadow-2xl shadow-black/20">
+            <div className="absolute inset-6 rounded-[2rem] border border-white/20 bg-white/10 p-8 shadow-2xl shadow-black/30 backdrop-blur-md">
               <div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
                 <span>EngTech HVAC service</span>
                 <Snowflake className="size-5 text-amber" />
               </div>
-              <div className="mt-14 space-y-4">
+              <div className="mt-12 space-y-4">
                 <p className="text-3xl font-semibold">
                   Residential &amp; light-commercial
                 </p>
@@ -151,7 +151,7 @@ export default function HomePage() {
                   <MapPin className="size-4" /> Serving South Florida
                 </p>
               </div>
-              <div className="mt-10 flex items-center gap-3 border-t border-white/15 pt-5 text-sm font-bold text-white">
+              <div className="mt-9 flex items-center gap-3 border-t border-white/15 pt-5 text-sm font-bold text-white">
                 <Phone className="size-4 text-amber" />
                 <span>Request service or call today</span>
               </div>
@@ -210,7 +210,7 @@ export default function HomePage() {
             {brands.map((brand) => (
               <div
                 key={brand}
-                className="group grid min-h-24 place-items-center rounded-xl border border-slate-200 bg-white px-3 text-center text-lg font-bold tracking-tight text-navy shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber hover:shadow-lift"
+                className="group grid min-h-24 place-items-center rounded-xl border border-slate-200 bg-white px-3 text-center text-base font-bold tracking-tight text-navy shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber hover:shadow-lift sm:text-lg"
               >
                 {brand}
               </div>
@@ -225,14 +225,14 @@ export default function HomePage() {
       <section className="bg-frost px-5 py-16 sm:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_auto]">
           <SectionHeading
-            eyebrow="Coming soon"
-            title="Google Reviews coming soon"
-            description="We are preparing this space for verified customer feedback. No reviews or ratings are displayed until they are available."
+            eyebrow="Customer reviews"
+            title="A space reserved for verified Google reviews."
+            description="We’re preparing this section for verified customer feedback as it becomes available. No reviews, ratings, or counts are displayed until then."
           />
           <div className="grid size-28 place-items-center rounded-full border-2 border-dashed border-amber bg-white text-center text-xs font-bold uppercase tracking-wider text-navy">
-            Verified
+            Reviews
             <br />
-            feedback
+            reserved
           </div>
         </div>
       </section>
@@ -286,7 +286,7 @@ export default function HomePage() {
             {serviceAreas.map((city) => (
               <div
                 key={city}
-                className="flex items-center gap-2 rounded-xl bg-white px-4 py-4 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-lift"
+                className="flex items-center gap-2 rounded-xl bg-white px-4 py-4 text-sm font-semibold shadow-md shadow-navy/5 transition hover:-translate-y-0.5 hover:shadow-lift"
               >
                 <MapPin className="size-4 shrink-0 text-amber" />
                 {city}
@@ -310,7 +310,10 @@ export default function HomePage() {
               "Service options are explained",
               "Work is scheduled after approval",
             ].map((step, index) => (
-              <li key={step} className="border border-slate-200 p-7">
+              <li
+                key={step}
+                className="border border-slate-200 p-7 md:relative md:border-l-0 md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-px md:after:w-5 md:after:bg-amber/40 md:first:border-l md:last:after:hidden"
+              >
                 <span className="text-xs font-bold tracking-[0.2em] text-amber">
                   0{index + 1}
                 </span>
