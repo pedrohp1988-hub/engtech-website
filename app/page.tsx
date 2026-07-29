@@ -88,9 +88,9 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-60"
+          className="contrast-105 object-cover object-center opacity-85 brightness-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/95 to-ink/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent" />
         <div className="grid-pattern absolute inset-0 opacity-40" />
         <div className="absolute -right-36 top-0 h-full w-2/3 -skew-x-12 bg-gradient-to-br from-navy/20 via-navy to-amber/10" />
         <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.1fr_.9fr]">
