@@ -1,6 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  MapPin,
+  Snowflake,
+  Wind,
+} from "lucide-react";
 import { CTA } from "@/components/sections/cta";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -61,19 +67,30 @@ const faqs = [
   ],
 ];
 
+const brands = [
+  "Carrier",
+  "Trane",
+  "Rheem",
+  "Goodman",
+  "Lennox",
+  "Daikin",
+  "Mitsubishi",
+];
+
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
         <div className="grid-pattern absolute inset-0 opacity-40" />
         <div className="absolute -right-36 top-0 h-full w-2/3 -skew-x-12 bg-gradient-to-br from-navy/20 via-navy to-amber/10" />
-        <div className="relative mx-auto grid min-h-[650px] max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.2fr_.8fr]">
+        <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.1fr_.9fr]">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-amber">
               Residential & light-commercial HVAC • South Florida
             </p>
             <h1 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-              Comfort help, <span className="text-amber">done clearly.</span>
+              South Florida HVAC services for{" "}
+              <span className="text-amber">cooler, clearer comfort.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               AC repair, installation, replacement, maintenance, mini-splits,
@@ -91,7 +108,31 @@ export default function HomePage() {
               </PhoneLink>
             </div>
           </div>
-          <div className="hidden border-l border-white/15 pl-10 lg:block">
+          <div className="relative hidden min-h-[360px] lg:block">
+            <div className="absolute inset-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 via-navy/80 to-amber/10 p-8 shadow-2xl shadow-black/20">
+              <div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
+                <span>Comfort system</span>
+                <Snowflake className="size-5 text-amber" />
+              </div>
+              <div className="mt-16 flex items-center gap-5">
+                <div className="grid size-24 place-items-center rounded-full border border-amber/50 bg-amber/10">
+                  <Wind className="size-12 text-amber" />
+                </div>
+                <div>
+                  <p className="text-3xl font-semibold">Cool air.</p>
+                  <p className="mt-1 text-slate-300">Clear next steps.</p>
+                </div>
+              </div>
+              <div className="mt-16 h-1 overflow-hidden rounded-full bg-white/10">
+                <div className="h-full w-2/3 rounded-full bg-amber" />
+              </div>
+              <div className="mt-3 flex justify-between text-xs text-slate-400">
+                <span>Residential</span>
+                <span>Light-commercial</span>
+              </div>
+            </div>
+          </div>
+          <div className="hidden border-l border-white/15 pl-10 lg:hidden">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-slate-400">
               The local EngTech standard
             </p>
@@ -129,6 +170,41 @@ export default function HomePage() {
                 <p className="mt-2 leading-7 text-steel">{point.text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Equipment familiarity"
+            title="We service all major HVAC brands."
+            description="Brand names are shown for familiarity only. Service options depend on the specific system and property."
+          />
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+            {brands.map((brand) => (
+              <div
+                key={brand}
+                className="grid min-h-20 place-items-center border border-slate-200 bg-white px-3 text-center text-lg font-bold tracking-tight text-navy transition hover:-translate-y-1 hover:border-amber hover:shadow-lift"
+              >
+                {brand}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-frost px-5 py-16 sm:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_auto]">
+          <SectionHeading
+            eyebrow="Coming soon"
+            title="Google Reviews coming soon"
+            description="We are preparing this space for verified customer feedback. No reviews or ratings are displayed until they are available."
+          />
+          <div className="grid size-28 place-items-center rounded-full border-2 border-dashed border-amber bg-white text-center text-xs font-bold uppercase tracking-wider text-navy">
+            Verified
+            <br />
+            feedback
           </div>
         </div>
       </section>

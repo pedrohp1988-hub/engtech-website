@@ -5,6 +5,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { navigation, siteConfig } from "@/lib/site-config";
 import { PhoneLink } from "@/components/ui/contact-link";
+import { EngTechLogo } from "@/components/brand/engtech-logo";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -17,17 +18,7 @@ export function Header() {
           className="flex items-center gap-3"
           aria-label="EngTech HVAC home"
         >
-          <span className="grid size-10 place-items-center rounded-sm bg-amber font-black text-ink">
-            ET
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-extrabold tracking-wide">
-              ENGTECH
-            </span>
-            <span className="block text-[10px] font-medium tracking-[0.2em] text-slate-300">
-              HVAC SOLUTIONS
-            </span>
-          </span>
+          <EngTechLogo />
         </Link>
         <nav
           className="hidden items-center gap-8 lg:flex"
