@@ -8,12 +8,15 @@ export function generateStaticParams() {
   return servicePages.map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata({
+type ServicePageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Metadata {
-  const page = servicePageMap[params.slug];
+}: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const page = servicePageMap[slug];
   if (!page) return {};
   return {
     title: `${page.title} | EngTech HVAC`,
@@ -28,12 +31,9 @@ export function generateMetadata({
   };
 }
 
-export default function ServiceLandingPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const page = servicePageMap[params.slug];
+export default async function ServiceLandingPage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const page = servicePageMap[slug];
   if (!page) notFound();
   const jsonLd = {
     "@context": "https://schema.org",
