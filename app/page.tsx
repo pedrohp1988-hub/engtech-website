@@ -9,6 +9,7 @@ import {
   Snowflake,
 } from "lucide-react";
 import { CTA } from "@/components/sections/cta";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PhoneLink } from "@/components/ui/contact-link";
@@ -222,17 +223,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-frost px-5 py-16 sm:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_auto]">
+      <section
+        className="bg-frost px-5 py-16 sm:px-8 sm:py-20"
+        aria-labelledby="customer-reviews-heading"
+      >
+        <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Customer reviews"
-            title="A space reserved for verified Google reviews."
-            description="We’re preparing this section for verified customer feedback as it becomes available. No reviews, ratings, or counts are displayed until then."
+            title="What Our Customers Say"
+            description="Real feedback from homeowners and businesses across South Florida."
+            id="customer-reviews-heading"
           />
-          <div className="grid size-28 place-items-center rounded-full border-2 border-dashed border-amber bg-white text-center text-xs font-bold uppercase tracking-wider text-navy">
-            Reviews
-            <br />
-            reserved
+          <div className="mt-10 w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
+            <GoogleReviews />
           </div>
         </div>
       </section>
