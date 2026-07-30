@@ -1,10 +1,13 @@
 import {
   Building2,
   Fan,
+  Gauge,
+  House,
   RefreshCw,
   ShieldCheck,
   Snowflake,
   Wrench,
+  Wind,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -284,6 +287,123 @@ export const servicePages: ServicePage[] = [
       ],
     ],
     related: ["preventive-maintenance", "ac-repair", "ac-replacement"],
+  },
+  {
+    slug: "thermostats-controls",
+    title: "Thermostats & HVAC Controls in South Florida",
+    eyebrow: "Thermostats & controls",
+    description:
+      "Thermostat and control assessment, replacement, and setup for compatible residential and light-commercial HVAC systems.",
+    intro:
+      "Thermostats and controls coordinate how an HVAC system responds to comfort settings. EngTech reviews the equipment, wiring, compatibility, and current operating concerns before recommending a control solution.",
+    icon: Gauge,
+    situations: [
+      "Inconsistent temperature readings",
+      "A thermostat that does not respond as expected",
+      "Replacing an older or incompatible control",
+      "Planning convenient comfort scheduling",
+    ],
+    provides: [
+      "Thermostat and system compatibility review",
+      "Accessible wiring and control assessment",
+      "Compatible thermostat replacement and setup",
+      "Clear operating guidance after installation",
+    ],
+    equipment:
+      "Control service may include compatible conventional thermostats, programmable controls, and supported smart thermostats connected to residential or light-commercial HVAC equipment.",
+    faqs: [
+      [
+        "Why is my thermostat not reaching the set temperature?",
+        "The cause may involve the thermostat, controls, airflow, equipment operation, or property conditions. The system should be reviewed before replacing a control.",
+      ],
+      [
+        "Can any thermostat work with my HVAC system?",
+        "No. Compatibility depends on the equipment, wiring, control requirements, and available features.",
+      ],
+      [
+        "Can EngTech replace an existing thermostat?",
+        "Yes. EngTech can assess the existing control and install a compatible replacement when appropriate.",
+      ],
+    ],
+    related: ["ac-repair", "ac-installation", "preventive-maintenance"],
+  },
+  {
+    slug: "indoor-air-quality",
+    title: "Indoor Air Quality Solutions in South Florida",
+    eyebrow: "Indoor air quality",
+    description:
+      "Practical filtration and indoor air quality options based on the HVAC system and property.",
+    intro:
+      "Indoor air quality concerns can relate to filtration, airflow, humidity, equipment condition, and property use. EngTech reviews the HVAC system and explains appropriate options without assuming one product fits every space.",
+    icon: Wind,
+    situations: [
+      "Filtration or airborne-particle concerns",
+      "High indoor humidity or comfort concerns",
+      "Uneven airflow between occupied spaces",
+      "Reviewing compatible HVAC air quality options",
+    ],
+    provides: [
+      "Existing filtration and airflow review",
+      "HVAC system compatibility assessment",
+      "Practical indoor air quality options",
+      "Clear maintenance and operating guidance",
+    ],
+    equipment:
+      "Recommendations may consider compatible filters and other HVAC air quality components based on the system, property, airflow, and comfort priorities.",
+    faqs: [
+      [
+        "Can HVAC filtration help with indoor air quality?",
+        "Appropriate filtration can be one part of an indoor air quality plan, but filter selection must also consider system compatibility and airflow.",
+      ],
+      [
+        "Does every property need the same air quality equipment?",
+        "No. Appropriate options depend on the HVAC system, property conditions, occupancy, and specific concerns.",
+      ],
+      [
+        "Can humidity affect indoor comfort?",
+        "Yes. Humidity can affect how a space feels, but the cause and suitable response depend on the property and system operation.",
+      ],
+    ],
+    related: ["preventive-maintenance", "ac-repair", "ductwork"],
+  },
+  {
+    slug: "ductwork",
+    title: "HVAC Ductwork Service in South Florida",
+    eyebrow: "Ductwork",
+    description:
+      "Ductwork assessment and service for airflow, distribution, and room-to-room comfort concerns.",
+    intro:
+      "Duct conditions can influence airflow and how cooling is distributed through a property. EngTech reviews accessible ductwork and system operation before explaining practical service options.",
+    icon: House,
+    situations: [
+      "Weak airflow from one or more vents",
+      "Uneven temperatures between rooms",
+      "Visible disconnected or damaged duct sections",
+      "Duct review during installation or replacement planning",
+    ],
+    provides: [
+      "Accessible duct and airflow assessment",
+      "Review of visible connections and conditions",
+      "Practical ductwork service recommendations",
+      "Coordination with system installation or replacement",
+    ],
+    equipment:
+      "Ductwork service is considered alongside the air handler, supply and return paths, registers, system airflow, and the layout of the property.",
+    faqs: [
+      [
+        "Can ductwork affect room-to-room comfort?",
+        "Yes. Duct layout, condition, connections, and airflow can influence how cooling reaches different areas.",
+      ],
+      [
+        "Should ducts be reviewed when replacing an AC system?",
+        "Reviewing existing duct conditions and airflow can help identify concerns before connecting replacement equipment.",
+      ],
+      [
+        "Does weak airflow always mean the ducts are damaged?",
+        "No. Weak airflow can have several causes, so the HVAC system and accessible ductwork should be evaluated together.",
+      ],
+    ],
+    related: ["ac-installation", "ac-replacement", "indoor-air-quality"],
   },
 ];
 
