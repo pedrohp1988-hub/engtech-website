@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 export function ButtonLink({
   href,
@@ -27,6 +28,13 @@ export function ButtonLink({
           "border border-white/30 text-white hover:bg-white hover:text-ink",
         className,
       )}
+      onClick={() => {
+        if (href === "/contact") {
+          trackEvent("click_request_service", {
+            page_path: window.location.pathname,
+          });
+        }
+      }}
     >
       {children}
       <ArrowRight aria-hidden="true" className="size-4" />

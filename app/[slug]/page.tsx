@@ -59,6 +59,25 @@ export default async function ServiceLandingPage({ params }: ServicePageProps) {
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteConfig.url}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: page.title,
+        item: `${siteConfig.url}/${page.slug}`,
+      },
+    ],
+  };
   return (
     <>
       <script
@@ -68,6 +87,10 @@ export default async function ServiceLandingPage({ params }: ServicePageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <ServicePageView page={page} />
     </>

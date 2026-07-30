@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { serviceAreas, serviceNames, siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -74,7 +75,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
+    "@type": ["LocalBusiness", "HVACBusiness"],
     name: siteConfig.name,
     url: siteConfig.url,
     telephone: siteConfig.phone,
@@ -85,6 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body className="font-[var(--font-inter)] antialiased">
+        <GoogleTagManager />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

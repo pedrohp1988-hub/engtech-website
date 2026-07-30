@@ -38,7 +38,7 @@ export function LeadForm() {
       });
       if (!response.ok) throw new Error("Lead request failed");
 
-      trackEvent("generate_lead", {
+      trackEvent("lead_form_submit", {
         form_name: "contact_lead",
         service: String(values.service),
         city: String(values.city),

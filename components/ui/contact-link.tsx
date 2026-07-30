@@ -23,7 +23,7 @@ export function PhoneLink({
       href={`tel:${phone}`}
       className={cn(className)}
       onClick={() =>
-        trackEvent("phone_click", {
+        trackEvent("click_call", {
           location,
           page_path: window.location.pathname,
         })
